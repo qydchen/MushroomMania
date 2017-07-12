@@ -97,7 +97,11 @@ const View = __webpack_require__(2);
 
 $l(function () {
   const rootEl = $l(".snake-game");
-  new View(rootEl);
+  window.clearInterval(new View(rootEl).intervalId);
+
+  $l('.play').on("click", function() {
+    new View(rootEl);
+  })
 });
 
 

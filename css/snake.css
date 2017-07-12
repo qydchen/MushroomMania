@@ -34,7 +34,7 @@ h1 {
 figure {
   display: inline-block;
   border: 10px solid black;
-  background: white;
+  background: skyblue;
 }
 
 ul {
@@ -60,8 +60,27 @@ li {
   background: url(../assets/slime.png) no-repeat;
 }
 
-.score-outer {
+.play-container {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.score-outer, .play {
   color: lightgreen;
   font-size: 30px;
   font-family: "Comic Sans MS";
+  margin: 10px;
+}
+
+.play {
+  border: 3px solid lightgreen;
+  border-radius: 10px;
+  padding: 0 8px 0 8px;
+}
+
+.play:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
