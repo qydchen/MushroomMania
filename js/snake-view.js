@@ -75,6 +75,6 @@ View.KEYS = {
   37: "W"
 }
 
-View.STEP_MILLISECOND = 100;
+View.STEP_MILLISECOND = 90;
 
 module.exports = View;

@@ -52,10 +52,7 @@ class Snake {
   }
 
   turn(direction) {
-    // prevent opposite turning
-    //  {x: 1, y: 0}
-    //  {x: -1, y: 0}
-    console.log(Snake.DIRECTION[this.direction]);
+  
     if (Snake.DIRECTION[this.direction].isOpposite(Snake.DIRECTION[direction]) ||
       this.turning) {
         return;

@@ -182,7 +182,7 @@ View.KEYS = {
   37: "W"
 }
 
-View.STEP_MILLISECOND = 100;
+View.STEP_MILLISECOND = 90;
 
 module.exports = View;
 
@@ -297,10 +297,7 @@ class Snake {
   }
 
   turn(direction) {
-    // prevent opposite turning
-    //  {x: 1, y: 0}
-    //  {x: -1, y: 0}
-    console.log(Snake.DIRECTION[this.direction]);
+  
     if (Snake.DIRECTION[this.direction].isOpposite(Snake.DIRECTION[direction]) ||
       this.turning) {
         return;
