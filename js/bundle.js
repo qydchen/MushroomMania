@@ -107,7 +107,6 @@ $l(function () {
 
 "use strict";
 const Board = __webpack_require__(3);
-const openModal = __webpack_require__(7);
 
 class View {
   constructor($el) {
@@ -132,7 +131,7 @@ class View {
       this.board.snake.move();
       this.render();
     } else {
-      this.openModal();
+      window.alert("You lose!");
       window.clearInterval(this.intervalId);
     }
   }
@@ -298,10 +297,6 @@ class Snake {
   }
 
   turn(direction) {
-    // prevent opposite turning
-    //  {x: 1, y: 0}
-    //  {x: -1, y: 0}
-    console.log(Snake.DIRECTION[this.direction]);
     if (Snake.DIRECTION[this.direction].isOpposite(Snake.DIRECTION[direction]) ||
       this.turning) {
         return;
@@ -375,13 +370,6 @@ class Apple {
 
 module.exports = Apple;
 
-
-/***/ }),
-/* 6 */,
-/* 7 */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: /Users/qyc/Desktop/Snizzake/js/modal.js Unexpected token (1:15)\nYou may need an appropriate loader to handle this file type.\n| export default const openModal = () => {\n|   let modal = document.getElementById('modal');\n| ");
 
 /***/ })
 /******/ ]);

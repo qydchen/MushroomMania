@@ -1,5 +1,4 @@
 const Board = require('./board');
-const openModal = require('./modal');
 
 class View {
   constructor($el) {
@@ -24,7 +23,7 @@ class View {
       this.board.snake.move();
       this.render();
     } else {
-      this.openModal();
+      window.alert("You lose!");
       window.clearInterval(this.intervalId);
     }
   }
