@@ -84,3 +84,18 @@ li {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.title-container {
+  position: relative;
+  height: 140px;
+}
+.title-logo {
+  background: url(../assets/title.png) no-repeat;
+  margin: 0 auto;
+  height: inherit;
+  width: 913px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
