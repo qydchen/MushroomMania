@@ -97,15 +97,21 @@ const View = __webpack_require__(2);
 
 $l(function () {
   const rootEl = $l(".snake-game");
+  var un_mute = document.getElementById('un-mute');
+  un_mute.onclick = function() {
+    let songs = document.getElementsByTagName('audio');
+    for (var j = 0; j < songs.length; j++) {
+      songs[j].muted = true;
+    }
+  };
   new View(rootEl);
 });
 
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 const Board = __webpack_require__(3);
 
 class View {
@@ -167,12 +173,13 @@ class View {
   }
 
   render() {
-    let score = Math.floor(this.board.snake.segments.length/2);
+    let score = Math.floor(this.board.snake.segments.length/3);
     this.score.html(score);
 
     this.updateClasses(this.board.snake.segments, "snake");
     this.updateClasses([this.board.apple.position], "apple");
   }
+  
 }
 
 View.KEYS = {
@@ -182,7 +189,7 @@ View.KEYS = {
   37: "W"
 }
 
-View.STEP_MILLISECOND = 75;
+View.STEP_MILLISECOND = 200;
 
 module.exports = View;
 
@@ -297,6 +304,10 @@ class Snake {
   }
 
   turn(direction) {
+    // prevent opposite turning
+    //  {x: 1, y: 0}
+    //  {x: -1, y: 0}
+    console.log(Snake.DIRECTION[this.direction]);
     if (Snake.DIRECTION[this.direction].isOpposite(Snake.DIRECTION[direction]) ||
       this.turning) {
         return;

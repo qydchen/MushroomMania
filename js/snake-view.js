@@ -59,12 +59,13 @@ class View {
   }
 
   render() {
-    let score = Math.floor(this.board.snake.segments.length/2);
+    let score = Math.floor(this.board.snake.segments.length/3);
     this.score.html(score);
 
     this.updateClasses(this.board.snake.segments, "snake");
     this.updateClasses([this.board.apple.position], "apple");
   }
+  
 }
 
 View.KEYS = {
@@ -74,6 +75,6 @@ View.KEYS = {
   37: "W"
 }
 
-View.STEP_MILLISECOND = 75;
+View.STEP_MILLISECOND = 200;
 
 module.exports = View;
