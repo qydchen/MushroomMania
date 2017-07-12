@@ -172,7 +172,7 @@ class View {
     this.updateClasses(this.board.snake.segments, "snake");
     this.updateClasses([this.board.apple.position], "apple");
   }
-  
+
 }
 
 View.KEYS = {
@@ -182,7 +182,7 @@ View.KEYS = {
   37: "W"
 }
 
-View.STEP_MILLISECOND = 200;
+View.STEP_MILLISECOND = 100;
 
 module.exports = View;
 
