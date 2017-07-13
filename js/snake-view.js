@@ -14,6 +14,7 @@ class View {
 
     this.score = $l('.score');
 
+
     $l(window).on("keydown", this.handleKeyEvent.bind(this));
 
   }
@@ -23,8 +24,10 @@ class View {
       this.board.snake.move();
       this.render();
     } else {
-      window.alert("You lose!");
+
+      window.alert(`Oh no!`);
       window.clearInterval(this.intervalId);
+
     }
   }
 
